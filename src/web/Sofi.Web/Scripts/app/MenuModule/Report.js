@@ -6,7 +6,7 @@
 */
 
 Ext.define('Sofi.MenuModule.Report', {
-    extend: 'Sofi.BogusModule',
+    extend: 'Sofi.Shared.WindowModule',
 
     init: function () {
 
@@ -20,34 +20,5 @@ Ext.define('Sofi.MenuModule.Report', {
                 items: []
             }
         };
-
-        this.launcher.menu.items.push({
-            text: 'Sales',
-            iconCls: 'bogus',
-            handler: this.createWindow,
-            scope: this,
-            windowId: windowIndex
-        });
-        this.launcher.menu.items.push({
-            text: 'Purchase',
-            iconCls: 'bogus',
-            handler: this.createWindow,
-            scope: this,
-            windowId: windowIndex
-        });
-        this.launcher.menu.items.push({
-            text: 'Inventory',
-            iconCls: 'bogus',
-            handler: this.createWindow,
-            scope: this,
-            windowId: windowIndex
-        });
-        this.launcher.menu.items.push({
-            text: 'General Ledger',
-            iconCls: 'bogus',
-            handler: this.createWindow,
-            scope: this,
-            windowId: windowIndex
-        });
     }
 });
