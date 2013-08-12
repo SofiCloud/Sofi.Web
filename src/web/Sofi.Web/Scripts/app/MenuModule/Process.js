@@ -6,7 +6,7 @@
 */
 
 Ext.define('Sofi.MenuModule.Process', {
-    extend: 'Sofi.BogusModule',
+    extend: 'Sofi.Shared.WindowModule',
 
     init: function () {
 
@@ -26,14 +26,7 @@ Ext.define('Sofi.MenuModule.Process', {
             iconCls: 'bogus',
             handler: this.createWindow,
             scope: this,
-            windowId: windowIndex
-        });
-        this.launcher.menu.items.push({
-            text: 'More',
-            iconCls: 'bogus',
-            handler: this.createWindow,
-            scope: this,
-            windowId: windowIndex
+            windowId: 'close-inv-module'
         });
     }
 });

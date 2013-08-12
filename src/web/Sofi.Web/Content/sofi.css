@@ -235,7 +235,7 @@ div.ux-taskbar div.x-toolbar {
 }*/
 
 .bogus {
-    background-image: url( images/bogus.png ) !important;
+    background-image: url(images/bogus.png ) !important;
 }
 
 .notepad {
@@ -303,4 +303,10 @@ div.ux-taskbar div.x-toolbar {
 
 .user-suit {
     background-image:url(images/icons/fam/user_suit.gif) !important;
+}
+
+/********************************************ICON IMAGES*************************************************/
+.sales-order
+{
+     background-image:url(images/icons/sofi/sales/sales-order.png) !important;
 }

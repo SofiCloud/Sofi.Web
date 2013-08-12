@@ -1,11 +1,6 @@
 ﻿Ext.define("Sofi.Sales.SalesOrder.Create", {
     constructor: function () {
-        Ext.require(['*']);
-
-        var viewport = Ext.create('Ext.Viewport', {
-            id: 'form-sales-order',
-            layout: 'border',
-            items: [
+        var view = [
             {
                 region: 'east',
                 title: 'Toolbar',
@@ -30,9 +25,9 @@
             },
             {
                 region: 'center',
-                title: 'Sales Order',
+                title: '',
                 border: true
-            }]
-        });
+            }];
+        return view;
     }
 });

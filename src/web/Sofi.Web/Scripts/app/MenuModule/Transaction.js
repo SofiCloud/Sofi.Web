@@ -6,6 +6,7 @@
 */
 
 Ext.define('Sofi.MenuModule.Transaction', {
+<<<<<<< HEAD
     extend: 'Sofi.BogusModule',
     init: function () {
         var replaceAction = Ext.create('Ext.Action', {
@@ -26,6 +27,12 @@ Ext.define('Sofi.MenuModule.Transaction', {
             ]
         });
 
+=======
+    extend: 'Sofi.Shared.WindowModule',
+
+    requires: ["Sofi.Sales.SalesOrder.Create"],
+    init: function () {
+>>>>>>> 28d14525b41bec83d04ef789b95be7c911316ee0
         this.launcher = {
             text: 'Transaction',
             iconCls: 'bogus',
@@ -38,13 +45,32 @@ Ext.define('Sofi.MenuModule.Transaction', {
         };
 
         this.launcher.menu.items.push({
-            id: 'bogus-sales',
+            id: 'sales-module',
             text: 'Sales',
             iconCls: 'bogus',
             handler: this.createWindow,
             scope: this,
+<<<<<<< HEAD
             windowId: windowIndex
+=======
+            windowId: 'sales-module',
+            menu: {
+                items: [{
+                    text: 'Sales Order',
+                    iconCls: 'sales-order',
+                    handler: this.createWindow,
+                    scope: this,
+                    windowId: 'sales-order',
+                    windowSize: { 
+                        width: '90%',
+                        height: '90%'
+                    },
+                    view: new Sofi.Sales.SalesOrder.Create()
+                }]
+            }
+>>>>>>> 28d14525b41bec83d04ef789b95be7c911316ee0
         });
+
         this.launcher.menu.items.push({
             text: 'Purchase',
             iconCls: 'bogus',
@@ -52,12 +78,17 @@ Ext.define('Sofi.MenuModule.Transaction', {
                 return false;
             },
             scope: this,
+<<<<<<< HEAD
+=======
+            windowId: 'purchase-module',
+>>>>>>> 28d14525b41bec83d04ef789b95be7c911316ee0
             menu: {
                 items: [{
                     text: 'Purchase 1',
                     iconCls: 'bogus',
                     //handler: this.createWindow,
                     scope: this,
+<<<<<<< HEAD
                     windowId: 'Purchase1',
                     listeners:{
                         itemcontextmenu: function(view, rec, node, index, event) {
@@ -67,6 +98,9 @@ Ext.define('Sofi.MenuModule.Transaction', {
                             return false;
                         }
                     }
+=======
+                    windowId: 'Purchase1'
+>>>>>>> 28d14525b41bec83d04ef789b95be7c911316ee0
                 }, {
                     text: 'Purchase 2',
                     iconCls: 'bogus',
@@ -82,19 +116,21 @@ Ext.define('Sofi.MenuModule.Transaction', {
                 }]
             }
         });
+
         this.launcher.menu.items.push({
             text: 'Inventory',
             iconCls: 'bogus',
             handler: this.createWindow,
             scope: this,
-            windowId: windowIndex
+            windowId: 'inventory-module'
         });
+
         this.launcher.menu.items.push({
             text: 'General Ledger',
             iconCls: 'bogus',
             handler: this.createWindow,
             scope: this,
-            windowId: windowIndex
+            windowId: 'gl-module'
         });
     }
 });

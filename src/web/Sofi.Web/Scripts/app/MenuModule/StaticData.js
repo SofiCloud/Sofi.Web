@@ -6,7 +6,7 @@
 */
 
 Ext.define('Sofi.MenuModule.StaticData', {
-    extend: 'Sofi.BogusModule',
+    extend: 'Sofi.Shared.WindowModule',
 
     init: function () {
 
@@ -26,28 +26,28 @@ Ext.define('Sofi.MenuModule.StaticData', {
             iconCls: 'bogus',
             handler: this.createWindow,
             scope: this,
-            windowId: windowIndex
+            windowId: 'item-module'
         });
         this.launcher.menu.items.push({
             text: 'Group',
             iconCls: 'bogus',
             handler: this.createWindow,
             scope: this,
-            windowId: windowIndex
+            windowId: 'group-module'
         });
         this.launcher.menu.items.push({
             text: 'Unit',
             iconCls: 'bogus',
             handler: this.createWindow,
             scope: this,
-            windowId: windowIndex
+            windowId: 'unit-module'
         });
         this.launcher.menu.items.push({
             text: 'Currency',
             iconCls: 'bogus',
             handler: this.createWindow,
             scope: this,
-            windowId: windowIndex
+            windowId: 'currency-module'
         });
     }
 });

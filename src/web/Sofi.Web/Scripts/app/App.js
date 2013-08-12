@@ -26,30 +26,24 @@ Ext.define('Sofi.App', {
     requires: [
         'Ext.window.MessageBox',
         'Sofi.Shared.ShortcutModel',
-        'Sofi.SystemStatus',
-        'Sofi.VideoWindow',
-        'Sofi.SubShortcut.Transaction',
-        'Sofi.TabWindow',
-        'Sofi.AccordionWindow',
-        'Sofi.Notepad',
         'Sofi.MenuModule.Transaction',
         'Sofi.MenuModule.Process',
         'Sofi.MenuModule.Report',
         'Sofi.MenuModule.StaticData',
-        'Sofi.BogusModule',
+        'Sofi.Shared.WindowModule',
         'Sofi.Settings'
     ],
 
     init: function () {
         this.callParent();
 
-        Ext.Msg.confirm('Full Screen', 'Are you want to full screen?', function (btn) {
-            if (btn == "yes") {
-                var el = document.documentElement;
-                var rfs = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen;
-                rfs.call(el);
-            }
-        });
+//        Ext.Msg.confirm('Full Screen', 'Are you want to full screen?', function (btn) {
+//            if (btn == "yes") {
+//                var el = document.documentElement;
+//                var rfs = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen;
+//                rfs.call(el);
+//            }
+//        });
     },
 
     getModules: function () {
@@ -65,7 +59,7 @@ Ext.define('Sofi.App', {
         var me = this, ret = me.callParent();
 
         return Ext.apply(ret, {
-
+            //cls: 'ux-desktop-black',
             contextMenuItems: [
                 { text: 'Change Settings', handler: me.onSettings, scope: me },
                 { text: 'Refresh', handler: me.onRefresh, scope: me }
@@ -91,7 +85,7 @@ Ext.define('Sofi.App', {
         var me = this, ret = me.callParent();
 
         return Ext.apply(ret, {
-            title: 'Nama User Login',
+            title: 'Guest',
             iconCls: 'user',
             height: 300,
             toolConfig: {
@@ -120,8 +114,8 @@ Ext.define('Sofi.App', {
 
         return Ext.apply(ret, {
             quickStart: [
-                { name: 'Accordion Window', iconCls: 'accordion', module: 'acc-win' },
-                { name: 'Grid Window', iconCls: 'icon-grid', module: 'grid-win' }
+//                { name: 'Accordion Window', iconCls: 'accordion', module: 'acc-win' },
+//                { name: 'Grid Window', iconCls: 'icon-grid', module: 'grid-win' }
             ],
             trayItems: [
                 { xtype: 'trayclock', flex: 1 }
