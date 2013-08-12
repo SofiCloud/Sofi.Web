@@ -53,9 +53,32 @@ Ext.define('Sofi.MenuModule.Transaction', {
         this.launcher.menu.items.push({
             text: 'Purchase',
             iconCls: 'bogus',
-            handler: this.createWindow,
+            handler: function(){
+                return false;
+            },
             scope: this,
-            windowId: windowIndex
+            windowId: windowIndex,
+            menu:{
+                items:[{
+                    text: 'Purchase 1',
+                    iconCls: 'bogus',
+                    handler: this.createWindow,
+                    scope: this,
+                    windowId: 'Purchase1'
+                },{
+                    text: 'Purchase 2',
+                    iconCls: 'bogus',
+                    handler: this.createWindow,
+                    scope: this,
+                    windowId: 'Purchase2'
+                },{
+                    text: 'Purchase 3',
+                    iconCls: 'bogus',
+                    handler: this.createWindow,
+                    scope: this,
+                    windowId: 'Purchase3'
+                }]
+            }
         });
         this.launcher.menu.items.push({
             text: 'Inventory',
