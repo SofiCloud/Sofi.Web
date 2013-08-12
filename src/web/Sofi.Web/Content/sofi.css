@@ -230,9 +230,9 @@ div.ux-taskbar div.x-toolbar {
     filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/notepadLarge.png', sizingMethod='scale');
 }
 
-.video {
+/*.video {
     background-image: url(images/gears.gif);
-}
+}*/
 
 .bogus {
     background-image: url( images/bogus.png ) !important;

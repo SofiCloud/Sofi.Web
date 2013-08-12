@@ -163,6 +163,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2627,6 +2628,7 @@
     <Content Include="Scripts\app\MenuModule\Process.js" />
     <Content Include="Scripts\app\MenuModule\Report.js" />
     <Content Include="Scripts\app\MenuModule\Transaction.js" />
+    <Content Include="Scripts\app\Sales\SalesOrder\Create.js" />
     <Content Include="Scripts\app\Shared\App.js" />
     <Content Include="Scripts\app\Shared\Desktop.js" />
     <Content Include="Scripts\app\Shared\Module.js" />
@@ -2669,6 +2671,7 @@
     <Content Include="Scripts\libs\extjs\ext.js" />
     <Content Include="Scripts\libs\include-ext.js" />
     <Content Include="Scripts\libs\options-toolbar.js" />
+    <Content Include="Scripts\tests\extjs\FormSalesOrder.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2723,6 +2726,8 @@
     <None Include="Content\ext-theme-neptune\Readme.md" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Scripts\app\app.jsb3" />
+    <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\Test\FormSalesOrder.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
