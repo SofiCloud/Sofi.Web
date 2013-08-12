@@ -4,6 +4,11 @@
 * licensing@sencha.com
 * http://www.sencha.com/license
 */
+
+Ext.Loader.setConfig({
+    disableCaching: false
+});
+
 Ext.Loader.setPath({
     'Sofi': 'Scripts/app'
 });

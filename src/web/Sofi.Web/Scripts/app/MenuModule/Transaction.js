@@ -7,7 +7,6 @@
 
 Ext.define('Sofi.MenuModule.Transaction', {
     extend: 'Sofi.BogusModule',
-
     init: function () {
         var replaceAction = Ext.create('Ext.Action', {
             text: 'Replace above text with selected value',
@@ -26,6 +25,7 @@ Ext.define('Sofi.MenuModule.Transaction', {
                 replaceAction
             ]
         });
+
         this.launcher = {
             text: 'Transaction',
             iconCls: 'bogus',
@@ -43,35 +43,37 @@ Ext.define('Sofi.MenuModule.Transaction', {
             iconCls: 'bogus',
             handler: this.createWindow,
             scope: this,
-            windowId: windowIndex,
-            listeners: {
-                contextmenu: function (view, rec, node, index, event) {
-                    alert('test');
-                }
-            }
+            windowId: windowIndex
         });
         this.launcher.menu.items.push({
             text: 'Purchase',
             iconCls: 'bogus',
-            handler: function(){
+            handler: function () {
                 return false;
             },
             scope: this,
-            windowId: windowIndex,
-            menu:{
-                items:[{
+            menu: {
+                items: [{
                     text: 'Purchase 1',
                     iconCls: 'bogus',
-                    handler: this.createWindow,
+                    //handler: this.createWindow,
                     scope: this,
-                    windowId: 'Purchase1'
-                },{
+                    windowId: 'Purchase1',
+                    listeners:{
+                        itemcontextmenu: function(view, rec, node, index, event) {
+                            event.stopEvent();
+                            console.log('item');
+                            //gridContextMenu.showAt(event.getXY());
+                            return false;
+                        }
+                    }
+                }, {
                     text: 'Purchase 2',
                     iconCls: 'bogus',
                     handler: this.createWindow,
                     scope: this,
                     windowId: 'Purchase2'
-                },{
+                }, {
                     text: 'Purchase 3',
                     iconCls: 'bogus',
                     handler: this.createWindow,
