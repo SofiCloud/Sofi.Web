@@ -1,0 +1,30 @@
+﻿html,body,h1,form,fieldset,input{margin:0;padding:0;border:0}body{font-family:Helvetica,Arial,sans-serif;font-size:12px;background:url(images/login/bg.png) no-repeat;background-attachment:fixed;background-repeat:no-repeat}#logonya{text-align:center;height:177px;background:url(images/login/logonya.png) no-repeat;background-position:center;margin-top:154px}#logonya img{margin-top:19px;width:134px;height:132px}#registration{color:#fff;margin: 0px auto;width:324px;padding-left: 51px;margin-top: -20px;}#registration a{color:#8c910b;text-shadow:0 -1px 0 #000;}#registration fieldset{padding: 13px;}input::-webkit-input-placeholder{color:#696868}color:#333;text-shadow:0 1px 0 #FFF}input#email{background-position:4px 5px;background-position:4px 5px,0 0}input#txtPassword{background-position:4px -20px;background-position:4px -20px,0 0}input#txtUserName{background-position:4px -46px;background-position:4px -46px,0 0}input#tel{background-position:4px -76px;background-position:4px -76px,0 0}#registerUserForm{text-align:center}h2{color:#fff;text-shadow:0 -1px 0 #000;-moz-box-shadow:0 1px 0 #3a3a3a;padding-top:9px;font-weight:400;font-size:21px;font-family:Lucida Grande,Helvetica,Arial,sans-serif}#submitForm{margin-top: 10px;width:39px;height:40px;border:0;text-indent:-9999px;background:url(images/login/klik_hover.png) no-repeat;cursor:pointer;float:right}#txtUserName,#txtPassword{padding:5px;border-radius:2px}fieldset label.infield{color:#333;text-shadow:0 1px 0 #fff;position:absolute;text-align:left;top:3px!important;left:35px!important;line-height:29px}#footer{margin-top:280px;text-align:center}#footer img{width:189px;height:46px;padding-left:53px}
+#txtUserName, #txtPassword{
+	width: 75%;
+
+	height: 12px;
+	border: 1px solid #6051CE;
+	font-size: 12px;
+	border-radius: 4px;
+}
+footer {
+	bottom: 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 20px;
+}
+footer img{
+	height: 50px;
+}
+#submitForm:hover {
+    background: url(images/login/klik.png) no-repeat;
+}
+.validation-summary-errors ul
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: rgb(213, 15, 15);
+    text-shadow: 1px 1px 1px #525050;
+}
