@@ -6,33 +6,9 @@
 */
 
 Ext.define('Sofi.MenuModule.Transaction', {
-<<<<<<< HEAD
-    extend: 'Sofi.BogusModule',
-    init: function () {
-        var replaceAction = Ext.create('Ext.Action', {
-            text: 'Replace above text with selected value',
-            handler: function (widget, event) {
-                var rec = grid.getSelectionModel().getSelection()[0];
-                if (rec) {
-                    Ext.get("playcontainer").update(rec.get('name'));
-                } else {
-                    alert('Please select a name from the grid');
-                }
-            }
-        });
-
-        var gridContextMenu = Ext.create('Ext.menu.Menu', {
-            items: [
-                replaceAction
-            ]
-        });
-
-=======
     extend: 'Sofi.Shared.WindowModule',
-
     requires: ["Sofi.Sales.SalesOrder.Create"],
     init: function () {
->>>>>>> 28d14525b41bec83d04ef789b95be7c911316ee0
         this.launcher = {
             text: 'Transaction',
             iconCls: 'bogus',
@@ -50,9 +26,6 @@ Ext.define('Sofi.MenuModule.Transaction', {
             iconCls: 'bogus',
             handler: this.createWindow,
             scope: this,
-<<<<<<< HEAD
-            windowId: windowIndex
-=======
             windowId: 'sales-module',
             menu: {
                 items: [{
@@ -68,7 +41,6 @@ Ext.define('Sofi.MenuModule.Transaction', {
                     view: new Sofi.Sales.SalesOrder.Create()
                 }]
             }
->>>>>>> 28d14525b41bec83d04ef789b95be7c911316ee0
         });
 
         this.launcher.menu.items.push({
@@ -78,17 +50,13 @@ Ext.define('Sofi.MenuModule.Transaction', {
                 return false;
             },
             scope: this,
-<<<<<<< HEAD
-=======
             windowId: 'purchase-module',
->>>>>>> 28d14525b41bec83d04ef789b95be7c911316ee0
             menu: {
                 items: [{
                     text: 'Purchase 1',
                     iconCls: 'bogus',
                     //handler: this.createWindow,
                     scope: this,
-<<<<<<< HEAD
                     windowId: 'Purchase1',
                     listeners:{
                         itemcontextmenu: function(view, rec, node, index, event) {
@@ -97,10 +65,8 @@ Ext.define('Sofi.MenuModule.Transaction', {
                             //gridContextMenu.showAt(event.getXY());
                             return false;
                         }
-                    }
-=======
+                    },
                     windowId: 'Purchase1'
->>>>>>> 28d14525b41bec83d04ef789b95be7c911316ee0
                 }, {
                     text: 'Purchase 2',
                     iconCls: 'bogus',
