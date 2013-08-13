@@ -13,6 +13,7 @@ Ext.define('Sofi.MenuModule.StaticData', {
         this.launcher = {
             text: 'Static Data',
             iconCls: 'notepad',
+            hideOnClick: false,
             handler: function () {
                 return false;
             },

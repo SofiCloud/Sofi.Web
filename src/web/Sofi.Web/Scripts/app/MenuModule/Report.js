@@ -13,6 +13,7 @@ Ext.define('Sofi.MenuModule.Report', {
         this.launcher = {
             text: 'Report',
             iconCls: 'notepad',
+            hideOnClick: false,
             handler: function () {
                 return false;
             },

@@ -12,13 +12,9 @@ Ext.define('Sofi.MenuModule.Transaction', {
         this.launcher = {
             text: 'Transaction',
             iconCls: 'bogus',
-            handler: function () {
+            hideOnClick: false,
+            handler: function (launcher, e) {
                 return false;
-            },
-            listeners: {
-                click: function(){
-                    console.log('click transaction');
-                }
             },
             menu: {
                 items: []
@@ -32,6 +28,7 @@ Ext.define('Sofi.MenuModule.Transaction', {
             handler: this.createWindow,
             scope: this,
             windowId: 'sales-module',
+            hideOnClick: false,
             menu: {
                 items: [{
                     text: 'Sales Order',
@@ -51,6 +48,7 @@ Ext.define('Sofi.MenuModule.Transaction', {
         this.launcher.menu.items.push({
             text: 'Purchase',
             iconCls: 'bogus',
+            hideOnClick: false,
             handler: function () {
                 return false;
             },
@@ -135,20 +133,24 @@ Ext.define('Sofi.MenuModule.Transaction', {
         });
 
         this.launcher.menu.items.push({
+            hideOnClick: false,
             text: 'Inventory',
             iconCls: 'bogus',
-            handler: this.createWindow,
+            hideOnClick: false,
+            handler: function(){
+                return false;
+            },
             scope: this,
-            windowId: 'inventory-module',
             menu: [test]
         });
 
         this.launcher.menu.items.push({
             text: 'General Ledger',
             iconCls: 'bogus',
-            handler: this.createWindow,
-            scope: this,
-            windowId: 'gl-module'
+            hideOnClick: false,
+            handler: function(){
+                return false;
+            }
         });
     }
 });
