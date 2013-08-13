@@ -38,7 +38,7 @@ Ext.define('Sofi.Shared.StartMenu', {
             cls: 'ux-start-menu-body',
             border: false,
             floating: false,
-            items: menu
+            items: menu,
         });
         me.menu.layout.align = 'stretch';
 

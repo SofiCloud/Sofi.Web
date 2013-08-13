@@ -22,14 +22,13 @@ Ext.onReady(function () {
 
 Ext.define('Sofi.App', {
     extend: 'Sofi.Shared.App',
-
     requires: [
         'Ext.window.MessageBox',
         'Sofi.Shared.ShortcutModel',
         'Sofi.MenuModule.Transaction',
         'Sofi.MenuModule.Process',
-        'Sofi.MenuModule.Report',
-        'Sofi.MenuModule.StaticData',
+        // 'Sofi.MenuModule.Report',
+        // 'Sofi.MenuModule.StaticData',
         'Sofi.Shared.WindowModule',
         'Sofi.Settings'
     ],
@@ -50,8 +49,8 @@ Ext.define('Sofi.App', {
         return [
             new Sofi.MenuModule.Transaction(),
             new Sofi.MenuModule.Process(),
-            new Sofi.MenuModule.Report(),
-            new Sofi.MenuModule.StaticData()
+            // new Sofi.MenuModule.Report(),
+            // new Sofi.MenuModule.StaticData()
         ];
     },
 

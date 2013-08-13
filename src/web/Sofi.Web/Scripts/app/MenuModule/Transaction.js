@@ -15,6 +15,11 @@ Ext.define('Sofi.MenuModule.Transaction', {
             handler: function () {
                 return false;
             },
+            listeners: {
+                click: function(){
+                    console.log('click transaction');
+                }
+            },
             menu: {
                 items: []
             }
@@ -55,15 +60,12 @@ Ext.define('Sofi.MenuModule.Transaction', {
                 items: [{
                     text: 'Purchase 1',
                     iconCls: 'bogus',
-                    //handler: this.createWindow,
+                    xtype: 'button',
                     scope: this,
                     windowId: 'Purchase1',
                     listeners:{
-                        itemcontextmenu: function(view, rec, node, index, event) {
-                            event.stopEvent();
-                            console.log('item');
-                            //gridContextMenu.showAt(event.getXY());
-                            return false;
+                        click: function(){
+                            console.log('click');
                         }
                     },
                     windowId: 'Purchase1'
@@ -83,12 +85,62 @@ Ext.define('Sofi.MenuModule.Transaction', {
             }
         });
 
+
+        Ext.define('Data', {
+            extend: 'Ext.data.Model',
+            fields: [
+                { name:'html', type:'string' }
+            ]
+        });
+
+        Ext.create('Ext.data.Store', {
+            id:'datasStore',
+            model: 'Data',
+            data: [
+                { html:'show context menu 1'},
+                { html:'show context menu 2'}
+            ]
+        });
+
+        var imageTpl = new Ext.XTemplate('<tpl for=".">',
+            '<div class="menu">{html}<div>',
+            '</tpl>');
+
+        var test = Ext.create('Ext.view.View', {
+            store: Ext.data.StoreManager.lookup('datasStore'),
+            tpl: imageTpl,
+            itemSelector: 'div.menu'
+        });
+
+        var rightclick = new Ext.create('Ext.menu.Menu',{
+            width: 100,
+            margin: '0 0 10 0',
+            plain: true,
+            items:[{
+                text: 'Item 1'
+            },{
+                text: 'Item 2'
+            }]
+        });
+
+        test.on({
+            itemcontextmenu:{
+                fn:function (test, record, item, index, e, eOpts){
+                    e.stopEvent();
+                    rightclick.showAt(e.getXY());
+                    console.log('kebuka');
+                },
+                scope: test
+            }
+        });
+
         this.launcher.menu.items.push({
             text: 'Inventory',
             iconCls: 'bogus',
             handler: this.createWindow,
             scope: this,
-            windowId: 'inventory-module'
+            windowId: 'inventory-module',
+            menu: [test]
         });
 
         this.launcher.menu.items.push({
