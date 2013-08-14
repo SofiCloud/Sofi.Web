@@ -4,6 +4,11 @@
 * licensing@sencha.com
 * http://www.sencha.com/license
 */
+
+Ext.Loader.setConfig({
+    disableCaching: false
+});
+
 Ext.Loader.setPath({
     'Sofi': 'Scripts/app'
 });
@@ -17,7 +22,6 @@ Ext.onReady(function () {
 
 Ext.define('Sofi.App', {
     extend: 'Sofi.Shared.App',
-
     requires: [
         'Ext.window.MessageBox',
         'Sofi.Shared.ShortcutModel',

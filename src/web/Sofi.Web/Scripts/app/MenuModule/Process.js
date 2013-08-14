@@ -13,6 +13,7 @@ Ext.define('Sofi.MenuModule.Process', {
         this.launcher = {
             text: 'Process',
             iconCls: 'notepad',
+            hideOnClick: false,
             handler: function () {
                 return false;
             },

@@ -7,14 +7,13 @@
 
 Ext.define('Sofi.MenuModule.Transaction', {
     extend: 'Sofi.Shared.WindowModule',
-
     requires: ["Sofi.Sales.SalesOrder.Create"],
     init: function () {
         this.launcher = {
             text: 'Transaction',
             iconCls: 'bogus',
-            handler: function (me, event) {
-                event.stopEvent();
+            hideOnClick: false,
+            handler: function (launcher, e) {
                 return false;
             },
             menu: {
@@ -29,6 +28,7 @@ Ext.define('Sofi.MenuModule.Transaction', {
             handler: this.createWindow,
             scope: this,
             windowId: 'sales-module',
+            hideOnClick: false,
             menu: {
                 items: [{
                     text: 'Sales Order',
@@ -36,7 +36,7 @@ Ext.define('Sofi.MenuModule.Transaction', {
                     handler: this.createWindow,
                     scope: this,
                     windowId: 'sales-order',
-                    windowSize: {
+                    windowSize: { 
                         width: '90%',
                         height: '90%'
                     },
@@ -48,14 +48,24 @@ Ext.define('Sofi.MenuModule.Transaction', {
         this.launcher.menu.items.push({
             text: 'Purchase',
             iconCls: 'bogus',
+            hideOnClick: false,
+            handler: function () {
+                return false;
+            },
             scope: this,
             windowId: 'purchase-module',
             menu: {
                 items: [{
                     text: 'Purchase 1',
                     iconCls: 'bogus',
-                    handler: this.createWindow,
+                    xtype: 'button',
                     scope: this,
+                    windowId: 'Purchase1',
+                    listeners:{
+                        click: function(){
+                            console.log('click');
+                        }
+                    },
                     windowId: 'Purchase1'
                 }, {
                     text: 'Purchase 2',
@@ -73,20 +83,74 @@ Ext.define('Sofi.MenuModule.Transaction', {
             }
         });
 
+
+        Ext.define('Data', {
+            extend: 'Ext.data.Model',
+            fields: [
+                { name:'html', type:'string' }
+            ]
+        });
+
+        Ext.create('Ext.data.Store', {
+            id:'datasStore',
+            model: 'Data',
+            data: [
+                { html:'show context menu 1'},
+                { html:'show context menu 2'}
+            ]
+        });
+
+        var imageTpl = new Ext.XTemplate('<tpl for=".">',
+            '<div class="menu">{html}<div>',
+            '</tpl>');
+
+        var test = Ext.create('Ext.view.View', {
+            store: Ext.data.StoreManager.lookup('datasStore'),
+            tpl: imageTpl,
+            itemSelector: 'div.menu'
+        });
+
+        var rightclick = new Ext.create('Ext.menu.Menu',{
+            width: 100,
+            margin: '0 0 10 0',
+            plain: true,
+            items:[{
+                text: 'Item 1'
+            },{
+                text: 'Item 2'
+            }]
+        });
+
+        test.on({
+            itemcontextmenu:{
+                fn:function (test, record, item, index, e, eOpts){
+                    e.stopEvent();
+                    rightclick.showAt(e.getXY());
+                    console.log('kebuka');
+                },
+                scope: test
+            }
+        });
+
         this.launcher.menu.items.push({
+            hideOnClick: false,
             text: 'Inventory',
             iconCls: 'bogus',
-            handler: this.createWindow,
+            hideOnClick: false,
+            handler: function(){
+                return false;
+            },
             scope: this,
-            windowId: 'inventory-module'
+            menu: [test]
         });
 
         this.launcher.menu.items.push({
             text: 'General Ledger',
             iconCls: 'bogus',
-            handler: this.createWindow,
-            scope: this,
-            windowId: 'gl-module'
+            hideOnClick: false,
+            handler: function(){
+                return false;
+            }
         });
     }
 });
