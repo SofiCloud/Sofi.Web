@@ -13,6 +13,11 @@ namespace Sofi.Web.Controllers
             return View();
         }
 
+        public ActionResult TestApplication()
+        {
+            return View();
+        }
+
         public ActionResult FormSalesOrder()
         {
             return View();

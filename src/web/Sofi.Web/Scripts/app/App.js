@@ -28,7 +28,6 @@ Ext.define('Sofi.App', {
         'Sofi.Shared.WindowModule',
         'Sofi.Settings'
     ],
-
     init: function () {
         this.callParent();
 

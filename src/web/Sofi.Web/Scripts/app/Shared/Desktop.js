@@ -14,7 +14,7 @@ Ext.define('Sofi.Shared.Desktop', {
     extend: 'Ext.panel.Panel',
 
     alias: 'widget.desktop',
-
+    controllers:["Sofi.Controllers.SalesOrder"],
     uses: [
         'Ext.util.MixedCollection',
         'Ext.menu.Menu',

@@ -6695,6 +6695,7 @@
     <None Include="Scripts\libs\extjs\ext-theme-neutral\sass\var\window\MessageBox.scss" />
     <None Include="Scripts\libs\extjs\ext-theme-neutral\sass\var\window\Window.scss" />
     <None Include="Scripts\libs\extjs\ext-theme-neutral\src\Readme.md" />
+    <Content Include="Views\Test\TestApplication.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

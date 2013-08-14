@@ -36,7 +36,7 @@ Ext.define('Sofi.Shared.App', {
         }
     },
 
-    init: function() {
+    init: function () {
         var me = this, desktopCfg;
 
         if (me.useQuickTips) {
@@ -53,7 +53,7 @@ Ext.define('Sofi.Shared.App', {
 
         me.viewport = new Ext.container.Viewport({
             layout: 'fit',
-            items: [ me.desktop ]
+            items: [me.desktop]
         });
 
         Ext.EventManager.on(window, 'beforeunload', me.onUnload, me);
@@ -63,10 +63,10 @@ Ext.define('Sofi.Shared.App', {
     },
 
     /**
-     * This method returns the configuration object for the Desktop object. A derived
-     * class can override this method, call the base version to build the config and
-     * then modify the returned object before returning it.
-     */
+    * This method returns the configuration object for the Desktop object. A derived
+    * class can override this method, call the base version to build the config and
+    * then modify the returned object before returning it.
+    */
     getDesktopConfig: function () {
         var me = this, cfg = {
             app: me,
@@ -80,10 +80,10 @@ Ext.define('Sofi.Shared.App', {
     getModules: Ext.emptyFn,
 
     /**
-     * This method returns the configuration object for the Start Button. A derived
-     * class can override this method, call the base version to build the config and
-     * then modify the returned object before returning it.
-     */
+    * This method returns the configuration object for the Start Button. A derived
+    * class can override this method, call the base version to build the config and
+    * then modify the returned object before returning it.
+    */
     getStartConfig: function () {
         var me = this,
             cfg = {
@@ -105,16 +105,16 @@ Ext.define('Sofi.Shared.App', {
         return cfg;
     },
 
-    createWindow: function(module) {
+    createWindow: function (module) {
         var window = module.createWindow();
         window.show();
     },
 
     /**
-     * This method returns the configuration object for the TaskBar. A derived class
-     * can override this method, call the base version to build the config and then
-     * modify the returned object before returning it.
-     */
+    * This method returns the configuration object for the TaskBar. A derived class
+    * can override this method, call the base version to build the config and then
+    * modify the returned object before returning it.
+    */
     getTaskbarConfig: function () {
         var me = this, cfg = {
             app: me,
@@ -125,15 +125,15 @@ Ext.define('Sofi.Shared.App', {
         return cfg;
     },
 
-    initModules : function(modules) {
+    initModules: function (modules) {
         var me = this;
         Ext.each(modules, function (module) {
             module.app = me;
         });
     },
 
-    getModule : function(name) {
-    	var ms = this.modules;
+    getModule: function (name) {
+        var ms = this.modules;
         for (var i = 0, len = ms.length; i < len; i++) {
             var m = ms[i];
             if (m.id == name || m.appType == name) {
@@ -143,7 +143,7 @@ Ext.define('Sofi.Shared.App', {
         return null;
     },
 
-    onReady : function(fn, scope) {
+    onReady: function (fn, scope) {
         if (this.isReady) {
             fn.call(scope, this);
         } else {
@@ -155,11 +155,11 @@ Ext.define('Sofi.Shared.App', {
         }
     },
 
-    getDesktop : function() {
+    getDesktop: function () {
         return this.desktop;
     },
 
-    onUnload : function(e) {
+    onUnload: function (e) {
         if (this.fireEvent('beforeunload', this) === false) {
             e.stopEvent();
         }

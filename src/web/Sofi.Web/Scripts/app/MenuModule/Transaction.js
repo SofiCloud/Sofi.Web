@@ -13,7 +13,8 @@ Ext.define('Sofi.MenuModule.Transaction', {
         this.launcher = {
             text: 'Transaction',
             iconCls: 'bogus',
-            handler: function () {
+            handler: function (me, event) {
+                event.stopEvent();
                 return false;
             },
             menu: {
@@ -35,7 +36,7 @@ Ext.define('Sofi.MenuModule.Transaction', {
                     handler: this.createWindow,
                     scope: this,
                     windowId: 'sales-order',
-                    windowSize: { 
+                    windowSize: {
                         width: '90%',
                         height: '90%'
                     },
@@ -47,9 +48,6 @@ Ext.define('Sofi.MenuModule.Transaction', {
         this.launcher.menu.items.push({
             text: 'Purchase',
             iconCls: 'bogus',
-            handler: function () {
-                return false;
-            },
             scope: this,
             windowId: 'purchase-module',
             menu: {
