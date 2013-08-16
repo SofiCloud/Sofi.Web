@@ -2591,9 +2591,10 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\all-classes.js" />
     <Content Include="Scripts\app\App.js" />
+    <Content Include="Scripts\app\controller\sales\SalesOrders.js" />
+    <Content Include="Scripts\app\model\sales\salesorder\Item.js" />
     <Content Include="Scripts\app\Settings.js" />
     <Content Include="Scripts\app\Shared\WindowModule.js" />
-    <Content Include="Scripts\app\credits.txt" />
     <Content Include="Content\images\accordian.gif" />
     <Content Include="Content\images\accordionLarge.png" />
     <Content Include="Content\images\bogus.png" />
@@ -2658,6 +2659,20 @@
     <Content Include="Scripts\app\Shared\TaskBar.js" />
     <Content Include="Scripts\app\Shared\Video.js" />
     <Content Include="Scripts\app\Shared\Wallpaper.js" />
+    <Content Include="Scripts\app\store\sales\salesorder\Items.js" />
+    <Content Include="Scripts\app\view\sales\salesorder\Form.js" />
+    <Content Include="Scripts\app\view\sales\salesorder\formparts\Footer.js" />
+    <Content Include="Scripts\app\view\sales\salesorder\formparts\FooterLeft.js" />
+    <Content Include="Scripts\app\view\sales\salesorder\formparts\FooterRight.js" />
+    <Content Include="Scripts\app\view\sales\salesorder\formparts\FormLeft.js" />
+    <Content Include="Scripts\app\view\sales\salesorder\formparts\FormRight.js" />
+    <Content Include="Scripts\app\view\sales\salesorder\formparts\formrightparts\Action.js" />
+    <Content Include="Scripts\app\view\sales\salesorder\formparts\formrightparts\Filter.js" />
+    <Content Include="Scripts\app\view\sales\salesorder\formparts\formrightparts\Others.js" />
+    <Content Include="Scripts\app\view\sales\salesorder\formparts\Grid.js" />
+    <Content Include="Scripts\app\view\sales\salesorder\formparts\Header.js" />
+    <Content Include="Scripts\app\view\sales\salesorder\formparts\HeaderLeft.js" />
+    <Content Include="Scripts\app\view\sales\salesorder\formparts\HeaderRight.js" />
     <Content Include="Scripts\app\WallpaperModel.js" />
     <Content Include="Content\images\wallpapers\Blue-Sencha.jpg" />
     <Content Include="Content\images\wallpapers\blue.jpg" />
@@ -5937,10 +5952,24 @@
     <Content Include="Scripts\libs\extjs\ext-theme-neutral\sass\example\slicer.js" />
     <Content Include="Scripts\libs\extjs\ext-theme-neutral\sass\example\theme.html" />
     <Content Include="Scripts\libs\extjs\ext.js" />
+    <Content Include="Scripts\libs\extjs\locale\ext-lang-en.js" />
+    <Content Include="Scripts\libs\extjs\locale\ext-lang-id.js" />
     <Content Include="Scripts\libs\include-ext.js" />
     <Content Include="Scripts\libs\options-toolbar.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\tests\extjs\FormSalesOrder.js" />
+    <Content Include="Test\Sales\SalesOrder\view\formparts\footerleft\app.js" />
+    <Content Include="Test\Sales\SalesOrder\view\formparts\footerleft\index.html" />
+    <Content Include="Test\Sales\SalesOrder\view\formparts\footerright\app.js" />
+    <Content Include="Test\Sales\SalesOrder\view\formparts\footerright\index.html" />
+    <Content Include="Test\Sales\SalesOrder\view\formparts\formrightparts\filter\app.js" />
+    <Content Include="Test\Sales\SalesOrder\view\formparts\formrightparts\filter\index.html" />
+    <Content Include="Test\Sales\SalesOrder\view\formparts\grid\app.js" />
+    <Content Include="Test\Sales\SalesOrder\view\formparts\grid\index.html" />
+    <Content Include="Test\Sales\SalesOrder\view\formparts\headerleft\app.js" />
+    <Content Include="Test\Sales\SalesOrder\view\formparts\headerleft\index.html" />
+    <Content Include="Test\Sales\SalesOrder\view\form\app.js" />
+    <Content Include="Test\Sales\SalesOrder\view\form\index.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -6696,6 +6725,7 @@
     <None Include="Scripts\libs\extjs\ext-theme-neutral\sass\var\window\Window.scss" />
     <None Include="Scripts\libs\extjs\ext-theme-neutral\src\Readme.md" />
     <Content Include="Views\Test\TestApplication.cshtml" />
+    <None Include="Test\Sales\SalesOrder\Data\items.json" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

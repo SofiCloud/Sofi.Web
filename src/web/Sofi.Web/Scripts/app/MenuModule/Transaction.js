@@ -7,7 +7,10 @@
 
 Ext.define('Sofi.MenuModule.Transaction', {
     extend: 'Sofi.Shared.WindowModule',
-    requires: ["Sofi.Sales.SalesOrder.Create"],
+    requires: [
+        "Sofi.Sales.SalesOrder.Create",
+        "Sofi.controller.sales.SalesOrders",
+    ],
     init: function () {
         this.launcher = {
             text: 'Transaction',
@@ -25,7 +28,6 @@ Ext.define('Sofi.MenuModule.Transaction', {
             id: 'sales-module',
             text: 'Sales',
             iconCls: 'bogus',
-            handler: this.createWindow,
             scope: this,
             windowId: 'sales-module',
             hideOnClick: false,
@@ -37,10 +39,10 @@ Ext.define('Sofi.MenuModule.Transaction', {
                     scope: this,
                     windowId: 'sales-order',
                     windowSize: { 
-                        width: '90%',
-                        height: '90%'
+                        width: '100%',
+                        height: '100%'
                     },
-                    view: new Sofi.Sales.SalesOrder.Create()
+                    view: new Sofi.view.sales.salesorder.Form()
                 }]
             }
         });

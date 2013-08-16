@@ -13,11 +13,17 @@ Ext.Loader.setPath({
     'Sofi': 'Scripts/app'
 });
 
-Ext.require('Sofi.App');
-
-var SofiApp;
 Ext.onReady(function () {
-    SofiApp = new Sofi.App();
+    Ext.application({
+        name: 'Sofi',
+        appFolder: 'Scripts/app',
+        requires:['Ext.container.Viewport'],
+        controllers:['sales.SalesOrders'],
+        launch: function(){
+            var SofiApp;
+            SofiApp = new Sofi.App();
+        }
+    });
 });
 
 Ext.define('Sofi.App', {
@@ -140,3 +146,4 @@ Ext.define('Sofi.App', {
         window.location.reload();
     }
 });
+
